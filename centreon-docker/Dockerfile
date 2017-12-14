@@ -75,17 +75,14 @@ RUN chown centreon:centreon /var/log/centreon && chmod 777 /var/log/centreon && 
 #  add-apt-repository -y ppa:webupd8team/java && \
 #  apt-get update && \
 #  apt-get install -y oracle-java7-installer
-ENV DEBIAN_FRONTEND=noninteractive
 # Install Java. 
-RUN apt-get update && apt-get dist-upgrade -y && \
-apt-get install -y default-jre default-jdk python-software-properties software-properties-common && \
-echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-add-apt-repository -y ppa:webupd8team/java &&\
-apt-get update && \
-apt-get install -y oracle-java7-installer && \
+RUN apt-get update && \
+apt-get install -y oracle-java7-jdk && \
 mkdir -p /var/java && \
 rm -rf /var/lib/apt/lists/* && \ 
-rm -rf /var/cache/oracle-jdk7-installer
+rm -rf /var/cache/oracle-jdk7-jdk
+
+ENV JAVA_HOME /usr/lib/jvm/jdk-7-oracle-arm32-vfp-hflt
 
 #
 ## ADD /var/cache/oracle-jdk7-installer/
