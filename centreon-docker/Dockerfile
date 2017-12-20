@@ -9,8 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     CENTREON_CONN=1.1.2 \
     CENTREON_UI=2.7.0 \
     CENTREON_CLAPI=1.8.0 \
-    NAG_PLUGINS=2.1.1 \
-    JAVA_HOME=/usr/lib/jvm/java-8-oracle
+    NAG_PLUGINS=2.1.1
 
 RUN apt-get update --no-install-recommends --fix-missing && \
     apt-get -y install \
@@ -63,7 +62,7 @@ RUN apt-get update --no-install-recommends --fix-missing && \
 	snmpd \
 	libnet-snmp-perl \
 	libsnmp-perl \
-#	snmptrapd \
+	snmptrapd \
 	smistrip \
 	libpng12-dev \
 	exim4 \
