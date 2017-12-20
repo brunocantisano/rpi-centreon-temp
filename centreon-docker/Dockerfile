@@ -82,7 +82,7 @@ RUN apt-get update --no-install-recommends --fix-missing && \
 	libqtcore4 \
 	libqt4-dev \
 	libqt4-sql-mysql \
-	libgnutls-dev \
+	libgnutls28-dev \
 	librrd-dev \
 	dialog \
 	telnet \
