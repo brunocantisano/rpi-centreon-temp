@@ -1,5 +1,13 @@
 # Dockerized Centreon
 
+Centreon on Raspberry:
+http://www.sugarbug.fr/framboise/full_raspcentreon/
+
+Following the above link I had problems to install snmp-mibs-downloader, so I followed the link below to install:
+
+Install snmp-mibs-downloader procedure:
+https://github.com/codergs/SNMP-MIBS-Downloader
+
 This docker-compose will run a docker container for centreon and a docker container for mysql
 
 The mysql container will have the mysql data mapped to /var/lib/centreon/mysql and will expose the mysql port on 13306.
@@ -82,6 +90,3 @@ Once logged in, there are a couple of tweaks to have a working configuration:
 
 * Create a supervisord friendly start script for cbd
 * Check why /var/log/centreon is not owned by centreon, current workaround in start.sh
-
-
-

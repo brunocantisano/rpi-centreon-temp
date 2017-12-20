@@ -1,20 +1,20 @@
 centreon:
-  build: centreon-docker/
+  image: paperinik/rpi-centreon:latest
   ports:
-   - "2222:22"
-   - "1443:443"
-   - "8080:8080"
+   - "9412:22"
+   - "9413:443"
+   - "9410:8080"
   volumes:
-   - /var/log/centreon:/var/log/centreon
+   - /home/pi/docker_path/centreon/log:/var/log/centreon
   links:
    - mysql
   privileged: true
 mysql:
-  image: mariadb:latest
+  image: hypriot/rpi-mysql:latest
   ports:
-   - "13306:3306"
+   - "9415:3306"
   volumes:
-   - /var/lib/centreon/mysql:/var/lib/mysql
-   - /var/log/mysqld.log:/var/log/centreon/mysqld.log
+   - /home/pi/docker_path/mysql:/var/lib/mysql
+   - /home/pi/docker_path/mysql/log/mysqld.log:/var/log/centreon/mysqld.log
   environment:
-     - MYSQL_ROOT_PASSWORD=c3ntreon007pw
+     - MYSQL_ROOT_PASSWORD=root
