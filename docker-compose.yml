@@ -14,7 +14,7 @@ mysql:
   ports:
    - "9415:3306"
   volumes:
-   - /home/pi/docker_path/mysql:/var/lib/mysql
-   - /home/pi/docker_path/mysql/log/mysqld.log:/var/log/centreon/mysqld.log
+   - /home/pi/docker_path/mysql/data:/var/lib/mysql
+   - /home/pi/docker_path/mysql/etc/my.cnf:/etc/mysql/my.cnf
   environment:
      - MYSQL_ROOT_PASSWORD=root
