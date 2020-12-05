@@ -1,4 +1,4 @@
-FROM paperinik/rpi-java8:latest
+FROM balenalib/raspberrypi3-debian-openjdk:11
 MAINTAINER Bruno Cardoso Cantisano <bruno.cantisano@gmail.com>
 RUN apt-get update
 RUN apt-get -y upgrade

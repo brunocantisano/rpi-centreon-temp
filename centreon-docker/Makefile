@@ -1,4 +1,4 @@
-.PHONY: all build push test 
+.PHONY: all build push test
 
 DOCKER_IMAGE_NAME=paperinik/rpi-centreon
 
